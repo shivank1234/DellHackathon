@@ -7,8 +7,8 @@ def home():
     return render_template("home.html")
     
 @app.route("/SignIn")
-def salvador():
-    return render_template("SignIn.html")
+def signin():
+    return render_template("signin.html")
     
 if __name__ == "__main__":
     app.run(debug=True)
