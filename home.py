@@ -11,9 +11,10 @@ def signin():
     if request.method == "POST":
       username = request.form["username"]   #Data Extracted from HTML
       password = request.form["pass"]
+      return render_template("idea.html")
     else:
       return render_template("signin.html")
-    return 'OK'
+    
 
 @app.route("/Register")
 def register():
