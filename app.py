@@ -23,9 +23,17 @@ def signin():
 def register():
     return render_template("register1.html")
 
-@app.route("/P1info")
+@app.route("/product1.html")
 def p1():
-    return render_template("p1info.html")
+    return render_template("product1.html")
+
+@app.route("/product2.html")
+def p2():
+    return render_template("product2.html")
+
+@app.route("/product3.html")
+def p3():
+    return render_template("product3.html")
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5001)

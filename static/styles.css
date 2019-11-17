@@ -1,41 +1,42 @@
-body
+/* body
 {
-    padding-top: 50px;
 
+    margin:0;
+    text-align: left;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat !important;
     background-attachment: fixed;
-    padding-left: 10px;
-    
-    margin-right:10;
-}
-/* h1
-{
-    color: #09a9ed ;
-    font-family: "Times New Roman", Times, serif;
-    /* text-align:right; */
+    color: #09a9ed;
 
 } */
+ul{
+  text-align: left;
+}
+h1
+{
+    color: #0085C5;
+    font-family: "Times New Roman", Times, serif;
+  /* text-align:right;*/ }
 h2
 {
-    text-align:right;
+
     padding-top: 20px;
-    color: #09a9ed;
+    color: #0085C5;
     font-family: "Times New Roman", Times, serif;
 
 }
 h3{
-  text-align:center;
-  color:#09a9ed;
+
+  color:#0085C5;
   font-family: "Times New Roman", Times, serif;
 
 }
 h6{
-  text-align:right;
-    color:#09a9ed;
+
+    color:#0085C5;
     font-family: "Times New Roman", Times, serif;
 }
 button{
@@ -43,7 +44,7 @@ button{
 
     -webkit-transition-duration: 0.4s;
       transition-duration: 0.4s;
-      background-color: #09a9ed;
+      background-color: #0085C5;
   color: white;
 
   padding: 10px;
@@ -54,11 +55,15 @@ button{
   margin: 4px 2px;
   cursor: pointer;
   justify-content: center;
-  margin-right:10;
-  margin-left:auto;
+  /* margin-right:auto;
+  margin-left:10; */
 }
 #nav {
-  width: 1500px;
+  width:100%;
+  margin:0;
+  padding:0;
+  left:0;
+  right:0;
   /* Too large, just an example */
 }
 
@@ -83,16 +88,15 @@ button:hover {
   color: black;
 
 }
-p
+/* p
 {
-  text-align: center;
-  margin-left: 200px;
-  margin-right: 200px;
-  color:#09a9ed;
-}
-span{
+  text-align: left;
+
+  color:#0085C5;
+} */
+/* span{
   display: block;
-}
+} */
 form{
   width:500px;
   margin: 0 auto;
@@ -103,7 +107,8 @@ form{
 
       -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
-        background-color: #09a9ed;
+        background-color: #0085C5;
+        /* 09a9ed */
     color: white;
 
     padding: 10px;
@@ -125,9 +130,9 @@ form{
 a:hover, a:visited, a:link, a:active{
   text-decoration: none;
 }
-label{
-  text-align:center;
-}
+/* label{
+  text-align:left;
+} */
 
 #newform{
 
@@ -136,6 +141,7 @@ label{
   height:250px;
 
 }
+/*
 
 table {
   border-collapse: collapse;
@@ -147,4 +153,21 @@ th, td {
   text-align: left;
   border-bottom: 1px solid #ddd; background-color: #4CAF50;
   color: white;
+ } */
+ /*
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
 }
+
+/* Clear floats after image containers *//*
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+/*
+img {
+  margin-top: 0;
+    } */
