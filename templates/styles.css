@@ -1,0 +1,153 @@
+body
+{
+    padding-top: 50px;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+    padding-left: 10px;
+    text-align:right;
+    margin-right:10;
+}
+h1
+{
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    text-align:right;
+
+}
+h2
+{
+    text-align:right;
+    padding-top: 20px;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+
+}
+h3{
+  text-align:center;
+  color:white;
+  font-family: "Times New Roman", Times, serif;
+
+}
+h6{
+  text-align:right;
+    color:blue;
+    font-family: "Times New Roman", Times, serif;
+}
+button{
+
+
+    -webkit-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      background-color: #09a9ed;
+  color: white;
+
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+  justify-content: center;
+  margin-right:10;
+  margin-left:auto;
+}
+#nav {
+  width: 1500px;
+  /* Too large, just an example */
+}
+
+.navigation {
+  float: left;
+  list-style: none;
+  padding: 0;
+}
+
+/* #login{
+    /*margin-left:600px;
+    margin-left: 50px;
+} */
+/*
+#register{
+    /*margin-left:570px;
+    margin-left: 50px;
+} */
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   background-color: white; /* Green */
+  color: black;
+
+}
+p
+{
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  color:blue;
+}
+span{
+  display: block;
+}
+form{
+  width:500px;
+  margin: 0 auto;
+}
+
+#submit{
+
+
+      -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        background-color: #09a9ed;
+    color: white;
+
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    justify-content: center;
+    display: flex;
+}
+#submit:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   background-color: white; /* Green */
+  color: black;
+
+}
+a:hover, a:visited, a:link, a:active{
+  text-decoration: none;
+}
+label{
+  text-align:center;
+}
+
+#newform{
+
+    width:1000px;
+  margin:0 auto;
+  height:250px;
+
+}
+img { display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; background-color: #4CAF50;
+  color: white;
+}
