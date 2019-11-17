@@ -48,9 +48,17 @@ def register():
 def idea():
     return render_template("idea.html")
 
-@app.route("/P1info")
+@app.route("/product1.html")
 def p1():
-    return render_template("p1info.html")
+    return render_template("product1.html")
+
+@app.route("/product2.html")
+def p2():
+    return render_template("product2.html")
+
+@app.route("/product3.html")
+def p3():
+    return render_template("product3.html")
 
 @app.route("/P2info")
 def p2():
