@@ -36,7 +36,7 @@ def register():
       useremail = request.form["email"]   #Data Extracted from HTML
       password = request.form["password"]
       cpassword = request.form["confirming"]
-      if (password != cpassword):
+      if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
       else:
          user = auth.create_user_with_email_and_password(useremail, password)  #User created in the Firebase Database
@@ -48,15 +48,15 @@ def register():
 def idea():
     return render_template("idea.html")
 
-@app.route("/P1info")
+@app.route("/product1.html")
 def p1():
     return render_template("product1.html")
 
-@app.route("/P2info")
+@app.route("/product2.html")
 def p2():
     return render_template("product2.html")
 
-@app.route("/P3info")
+@app.route("/product3.html")
 def p3():
     return render_template("product3.html")  
 
