@@ -1,11 +1,11 @@
-from flask import Flask, render_template,request,flash,session,redirect  
+from flask import Flask, render_template,request,flash,session,redirect
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     return render_template("home.html")
-    
+
 @app.route("/SignIn",methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
@@ -14,7 +14,6 @@ def signin():
       return render_template("idea.html")
     else:
       return render_template("signin.html")
-    
 
 @app.route("/Register", methods=["GET", "POST"])
 def register():
