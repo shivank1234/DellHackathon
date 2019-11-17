@@ -21,7 +21,7 @@ def signin():
 
 @app.route("/Register")
 def register():
-    return render_template("register.html")
+    return render_template("register1.html")
 
 @app.route("/P1info")
 def p1():
