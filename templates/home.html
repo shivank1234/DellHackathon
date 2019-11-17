@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+          <link rel="stylesheet" href ="{{ url_for('static', filename='styles.css')}}">
 <title>
 Dell Support System
 </title>
 </head>
 <body>
 <h1>
-Welcome to Dell
+<p>Welcome to Dell</p>
 </h1>
 <p>
 Here is the pick of the Day</p>
 <img src ="../static/img1.jpeg" alt =Dell Product1>
 <img src ="../static/img2.jpeg" alt =Dell Product2>
 <img src ="../static/img3.jpeg" alt =Dell Product3><br>
-<input type="submit" name="dp1" value ="See Details">
-<input type="submit" name="dp2" value ="See Details">
-<input type="submit" name="dp3" value ="See Details">
+<a href="product1.html"><button id="product1">See details</button></a>
+<a href="product2.html"><button id="product2">See details</button></a>
+<a href="product3.html"><button id="product3">See details</button></a>
+<a href="register1.html"><button id="register">Register</button></a>
 <h2>About Us</h2>
 <p>We work very hard to make your lives better.
 Introducing the new feature to make support for products better.
 </p>
 </body>
 </html>
-
