@@ -1,0 +1,10 @@
+Home User,Gamer,School Student,College Student,Professional,Traveller,Warranty Recommended
+1,1,1,0,0,0,Warranty2
+1,0,1,0,0,0,Warranty2
+0,1,1,0,0,0,Warranty4
+0,0,0,0,1,1,Warranty5
+0,0,0,1,0,1,Warranty2
+1,0,0,0,0,0,Warranty1
+0,1,0,1,0,0,Warranty4
+0,1,0,0,1,0,Warranty5
+0,0,0,0,1,0,Warranty5
