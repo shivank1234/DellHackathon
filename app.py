@@ -1,23 +1,8 @@
 from flask import Flask, render_template,request,flash,session,redirect
-from pyrebase import pyrebase
 from textblob import TextBlob
 import csv
 
 app = Flask(__name__)
-
-config = {
-    "apiKey": "AIzaSyAdquXgxR_M9NsQpW50vsz0v6WwvvBC17A",
-    "authDomain": "dellhackathon-e28e7.firebaseapp.com",
-    "databaseURL": "https://dellhackathon-e28e7.firebaseio.com",
-    "projectId": "dellhackathon-e28e7",
-    "storageBucket": "dellhackathon-e28e7.appspot.com",
-    "messagingSenderId": "4547496317",
-    "appId": "1:4547496317:web:8f3caa80b97db683e6a414",
-    "measurementId": "G-GGYG3JXW08"
-          }
-
-firebase = pyrebase.initialize_app(config)
-auth = firebase.auth()
 
 @app.route("/")
 def home():
@@ -45,11 +30,8 @@ def register():
       list[3]=request.form["radio4"]
       list[4]=request.form["radio5"]
       list[5]=request.form["radio6"]
-      print(list[5])
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
-      else:
-         user = auth.create_user_with_email_and_password(useremail, password)  #User created in the Firebase Database
       return render_template("idea.html")
      else:
         return render_template("register1.html")
