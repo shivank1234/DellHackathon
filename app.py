@@ -32,7 +32,9 @@ def register():
       list[5]=request.form["radio6"]
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
-      return render_template("idea.html")
+
+
+      # return render_template("idea.html")
      else:
         return render_template("register1.html")
 
