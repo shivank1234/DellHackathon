@@ -53,7 +53,7 @@ def idea():
 @app.route("/product1.html")
 def p1():
  with open('dell dataset.csv','r') as csv_file:
-           reader=csv.reader(csv_file)                                                     
+           reader=csv.reader(csv_file)
            sudoku_list = list(reader)
 
  i=1
@@ -82,8 +82,8 @@ def p1():
       if(sentence.sentiment.polarity<min):
            tmin=i
     i=i+1
-          
- print(sudoku_list[tmax][1])   #Results of Sentiment Analysis 
+
+ print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
  print(sudoku_list[tmin][1])
 
 
