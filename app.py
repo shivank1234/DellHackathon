@@ -1,5 +1,7 @@
 from flask import Flask, render_template,request,flash,session,redirect
 from pyrebase import pyrebase
+from textblob import TextBlob
+import csv
 
 app = Flask(__name__)
 
@@ -50,7 +52,43 @@ def idea():
 
 @app.route("/product1.html")
 def p1():
-    return render_template("product1.html")
+ with open('dell dataset.csv','r') as csv_file:
+           reader=csv.reader(csv_file)                                                     
+           sudoku_list = list(reader)
+
+ i=1
+ max=0
+ tmax=-1
+ min=0
+ tmin=-1
+ while (i<99):
+    blob = TextBlob(sudoku_list[i][1])
+    if(((int(sudoku_list[i][0]))%3)!=1):
+      i=i+1
+      continue
+    for sentence in blob.sentences:
+      if(sentence.sentiment.polarity>max):
+           tmax=i
+    i=i+1
+
+ i=1
+
+ while (i<99):
+    blob = TextBlob(sudoku_list[i][1])
+    if(((int(sudoku_list[i][0]))%3)!=1):
+      i=i+1
+      continue
+    for sentence in blob.sentences:
+      if(sentence.sentiment.polarity<min):
+           tmin=i
+    i=i+1
+          
+ print(sudoku_list[tmax][1])   #Results of Sentiment Analysis 
+ print(sudoku_list[tmin][1])
+
+
+
+ return render_template("product1.html")
 
 @app.route("/product2.html")
 def p2():
