@@ -26,7 +26,7 @@ def home():
 @app.route("/SignIn",methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
-      username = request.form["username"]   #Data Extracted from HTML
+      username = request.form["email"]   #Data Extracted from HTML
       password = request.form["pass"]
       return render_template("idea.html")
     else:
@@ -38,6 +38,12 @@ def register():
       useremail = request.form["email"]   #Data Extracted from HTML
       password = request.form["password"]
       cpassword = request.form["confirming"]
+      radio1=request.form["radio1"]
+      radio2=request.form["radio2"]
+      radio3=request.form["radio3"]
+      radio4=request.form["radio4"]
+      radio5=request.form["radio5"]
+      radio6=request.form["radio6"]
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
       else:
