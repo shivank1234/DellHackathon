@@ -132,7 +132,7 @@ def p2():
 
     print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
     print(sudoku_list[tmin][1])
-     rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
+    rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
 
     return render_template("product2.html",rows=rows)
 
@@ -171,7 +171,7 @@ def p3():
 
     print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
     print(sudoku_list[tmin][1])
-     rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
+    rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
 
     return render_template("product3.html",rows=rows)
 
