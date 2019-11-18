@@ -1,23 +1,8 @@
 from flask import Flask, render_template,request,flash,session,redirect
-from pyrebase import pyrebase
 from textblob import TextBlob
 import csv
 
 app = Flask(__name__)
-
-config = {
-    "apiKey": "AIzaSyAdquXgxR_M9NsQpW50vsz0v6WwvvBC17A",
-    "authDomain": "dellhackathon-e28e7.firebaseapp.com",
-    "databaseURL": "https://dellhackathon-e28e7.firebaseio.com",
-    "projectId": "dellhackathon-e28e7",
-    "storageBucket": "dellhackathon-e28e7.appspot.com",
-    "messagingSenderId": "4547496317",
-    "appId": "1:4547496317:web:8f3caa80b97db683e6a414",
-    "measurementId": "G-GGYG3JXW08"
-          }
-
-firebase = pyrebase.initialize_app(config)
-auth = firebase.auth()
 
 @app.route("/")
 def home():
@@ -38,16 +23,15 @@ def register():
       useremail = request.form["email"]   #Data Extracted from HTML
       password = request.form["password"]
       cpassword = request.form["confirming"]
-      radio1=request.form["radio1"]
-      radio2=request.form["radio2"]
-      radio3=request.form["radio3"]
-      radio4=request.form["radio4"]
-      radio5=request.form["radio5"]
-      radio6=request.form["radio6"]
+      list=[0,0,0,0,0,0]
+      list[0]=request.form["radio1"]
+      list[1]=request.form["radio2"]
+      list[2]=request.form["radio3"]
+      list[3]=request.form["radio4"]
+      list[4]=request.form["radio5"]
+      list[5]=request.form["radio6"]
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
-      else:
-         user = auth.create_user_with_email_and_password(useremail, password)  #User created in the Firebase Database
       return render_template("idea.html")
      else:
         return render_template("register1.html")
@@ -132,7 +116,7 @@ def p2():
 
     print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
     print(sudoku_list[tmin][1])
-     rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
+    rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
 
     return render_template("product2.html",rows=rows)
 
@@ -171,7 +155,7 @@ def p3():
 
     print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
     print(sudoku_list[tmin][1])
-     rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
+    rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
 
     return render_template("product3.html",rows=rows)
 
