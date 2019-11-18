@@ -1,13 +1,14 @@
 from flask import Flask, render_template,request,flash,session,redirect
 from textblob import TextBlob
 import csv
+import xlwt
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     return render_template("home.html")
-
+    
 @app.route("/SignIn",methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
@@ -30,6 +31,7 @@ def register():
       list[3]=request.form["radio4"]
       list[4]=request.form["radio5"]
       list[5]=request.form["radio6"]
+      
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
       return render_template("idea.html")
