@@ -38,12 +38,14 @@ def register():
       useremail = request.form["email"]   #Data Extracted from HTML
       password = request.form["password"]
       cpassword = request.form["confirming"]
-      radio1=request.form["radio1"]
-      radio2=request.form["radio2"]
-      radio3=request.form["radio3"]
-      radio4=request.form["radio4"]
-      radio5=request.form["radio5"]
-      radio6=request.form["radio6"]
+      list=[0,0,0,0,0,0]
+      list[0]=request.form["radio1"]
+      list[1]=request.form["radio2"]
+      list[2]=request.form["radio3"]
+      list[3]=request.form["radio4"]
+      list[4]=request.form["radio5"]
+      list[5]=request.form["radio6"]
+      print(list[5])
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
       else:
