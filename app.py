@@ -1,7 +1,7 @@
 from flask import Flask, render_template,request,flash,session,redirect
 from textblob import TextBlob
 import csv
-import xlwt
+from warranty_recommend import predict_warranty
 
 app = Flask(__name__)
 
@@ -14,6 +14,8 @@ def signin():
     if request.method == "POST":
       username = request.form["email"]   #Data Extracted from HTML
       password = request.form["pass"]
+      idea_output= predict_warranty([1,0,1,1,0,0])
+      print(idea_output[0]) #ML Output
       return render_template("idea.html")
     else:
       return render_template("signin.html")
@@ -31,7 +33,8 @@ def register():
       list[3]=request.form["radio4"]
       list[4]=request.form["radio5"]
       list[5]=request.form["radio6"]
-      
+      idea_output= predict_warranty(list)
+      print(idea_output[0]) #ML Output
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
       return render_template("idea.html")
