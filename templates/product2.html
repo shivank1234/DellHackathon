@@ -11,7 +11,7 @@ Dell Support System
 
 <body>
     <img src="static/dell.PNG" alt="P1" style="width:100%">
-
+<div class="mainthingy">
 <h1>
 <p>Welcome to Dell</p>
 </h1>
@@ -29,9 +29,11 @@ Dell Support System
   <li>32GB (2x16GB) DDR4 2666MHz</li>
   <li>512GB PCIe m.2 SSD + 1TB (+8GB SSHD) Hybrid Drive</li>
 </ul>
-</div>
+
+<a href="/SignIn"><button>Buy Now</button></a>
+</div><p>
 <h3>Reviews</h3>
-<!-- <table>
+<table>
     <colgroup>
 <col style="width: 10%" />
 <col style="width: 20%" />
@@ -41,23 +43,20 @@ Dell Support System
 <col style="width: 10%" />
 <col style="width: 20%" />
 </colgroup>
-{% for r in rows %}
+  <tr>
+  <th>Most positive review</th>
+  <th>Most negative review</th>
+  </tr>
+  {% for r in rows %}
         <tr>
-          // hello!!!!!!!!!!!! IMPORTANT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-          // OVER HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!
-          // so, in the below "" thingies we need to fill in stuff like the attributes
-          // like {{r["Username"]}} so that it would display user name and then we would have something like {{r["Review"]}}
-          // so we shall be having a table with usernames first and then their reviews and a bunch of other attributes as well
-          // for the data to come here though, go to app.py and over there in the product1 function, in rows, there should be the reviews and such
-          // data which we shall be passing in
 
-            <td>{{r[""]}}</td>
-            <td>{{r[""]}}</td>
-            <td>{{r[""]}}</td>
+            <td>{{r["positive"]}}</td>
+            <td>{{r["negative"]}}</td>
+
         </tr>
 {%endfor%}
-</table> -->
-<a href="/SignIn"><button>Buy Now</button></a>
+</table>
 
+</p>
 </body>
 </html>

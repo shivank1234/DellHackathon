@@ -91,15 +91,16 @@ def p1():
 
  print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
  print(sudoku_list[tmin][1])
+ rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
 
 
 
- return render_template("product1.html")
+ return render_template("product1.html", rows=rows)
 
 @app.route("/product2.html")
 def p2():
     with open('dell dataset.csv','r') as csv_file:
-           reader=csv.reader(csv_file)                                                     
+           reader=csv.reader(csv_file)
            sudoku_list = list(reader)
 
     i=1
@@ -128,16 +129,17 @@ def p2():
          if(sentence.sentiment.polarity<min):
               tmin=i
        i=i+1
-          
-    print(sudoku_list[tmax][1])   #Results of Sentiment Analysis 
-    print(sudoku_list[tmin][1])
 
-    return render_template("product2.html")
+    print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
+    print(sudoku_list[tmin][1])
+     rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
+
+    return render_template("product2.html",rows=rows)
 
 @app.route("/product3.html")
 def p3():
     with open('dell dataset.csv','r') as csv_file:
-           reader=csv.reader(csv_file)                                                     
+           reader=csv.reader(csv_file)
            sudoku_list = list(reader)
 
     i=1
@@ -166,11 +168,12 @@ def p3():
          if(sentence.sentiment.polarity<min):
               tmin=i
        i=i+1
-          
-    print(sudoku_list[tmax][1])   #Results of Sentiment Analysis 
-    print(sudoku_list[tmin][1])
 
-    return render_template("product3.html")
+    print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
+    print(sudoku_list[tmin][1])
+     rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
+
+    return render_template("product3.html",rows=rows)
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5001)
