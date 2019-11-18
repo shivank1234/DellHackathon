@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request,flash,session,redirect
-import pyrebase
+from pyrebase import pyrebase
 
 app = Flask(__name__)
 
@@ -40,7 +40,7 @@ def register():
          return render_template("register1.html")
       else:
          user = auth.create_user_with_email_and_password(useremail, password)  #User created in the Firebase Database
-      return render_template("idea.html")     
+      return render_template("idea.html")
      else:
         return render_template("register1.html")
 
@@ -58,7 +58,7 @@ def p2():
 
 @app.route("/product3.html")
 def p3():
-    return render_template("product3.html")  
+    return render_template("product3.html")
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5001)
