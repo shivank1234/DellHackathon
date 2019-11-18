@@ -63,7 +63,7 @@ def p1():
  tmin=-1
  while (i<99):
     blob = TextBlob(sudoku_list[i][1])
-    if(((int(sudoku_list[i][0]))%3)!=1):
+    if(((int(sudoku_list[i][0]))%3)!=0):
       i=i+1
       continue
     for sentence in blob.sentences:
@@ -75,7 +75,7 @@ def p1():
 
  while (i<99):
     blob = TextBlob(sudoku_list[i][1])
-    if(((int(sudoku_list[i][0]))%3)!=1):
+    if(((int(sudoku_list[i][0]))%3)!=0):
       i=i+1
       continue
     for sentence in blob.sentences:
@@ -92,10 +92,78 @@ def p1():
 
 @app.route("/product2.html")
 def p2():
+    with open('dell dataset.csv','r') as csv_file:
+           reader=csv.reader(csv_file)                                                     
+           sudoku_list = list(reader)
+
+    i=1
+    max=0
+    tmax=-1
+    min=0
+    tmin=-1
+    while (i<99):
+       blob = TextBlob(sudoku_list[i][1])
+       if(((int(sudoku_list[i][0]))%3)!=1):
+         i=i+1
+         continue
+       for sentence in blob.sentences:
+         if(sentence.sentiment.polarity>max):
+           tmax=i
+       i=i+1
+
+    i=1
+
+    while (i<99):
+       blob = TextBlob(sudoku_list[i][1])
+       if(((int(sudoku_list[i][0]))%3)!=1):
+         i=i+1
+         continue
+       for sentence in blob.sentences:
+         if(sentence.sentiment.polarity<min):
+              tmin=i
+       i=i+1
+          
+    print(sudoku_list[tmax][1])   #Results of Sentiment Analysis 
+    print(sudoku_list[tmin][1])
+
     return render_template("product2.html")
 
 @app.route("/product3.html")
 def p3():
+    with open('dell dataset.csv','r') as csv_file:
+           reader=csv.reader(csv_file)                                                     
+           sudoku_list = list(reader)
+
+    i=1
+    max=0
+    tmax=-1
+    min=0
+    tmin=-1
+    while (i<99):
+       blob = TextBlob(sudoku_list[i][1])
+       if(((int(sudoku_list[i][0]))%3)!=2):
+         i=i+1
+         continue
+       for sentence in blob.sentences:
+         if(sentence.sentiment.polarity>max):
+              tmax=i
+       i=i+1
+
+    i=1
+
+    while (i<99):
+       blob = TextBlob(sudoku_list[i][1])
+       if(((int(sudoku_list[i][0]))%3)!=2):
+         i=i+1
+         continue
+       for sentence in blob.sentences:
+         if(sentence.sentiment.polarity<min):
+              tmin=i
+       i=i+1
+          
+    print(sudoku_list[tmax][1])   #Results of Sentiment Analysis 
+    print(sudoku_list[tmin][1])
+
     return render_template("product3.html")
 
 if __name__ == "__main__":
