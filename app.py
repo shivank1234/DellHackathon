@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return render_template("home.html")
-    
+
 @app.route("/SignIn",methods=["GET", "POST"])
 def signin():
     if request.method == "POST":
@@ -16,7 +16,17 @@ def signin():
       password = request.form["pass"]
       idea_output= predict_warranty([1,0,1,1,0,0])
       print(idea_output[0]) #ML Output
-      return render_template("idea.html")
+
+      if(idea_output[0] == "Warranty1"):
+          return render_template("warranty1.html")
+      elif(idea_output[0] == "Warranty2"):
+          return render_template("warranty2.html")
+      elif(idea_output[0] == "Warranty3"):
+          return render_template("warranty3.html")
+      elif(idea_output[0] == "Warranty4"):
+          return render_template("warranty4.html")
+      elif(idea_output[0] == "Warranty5"):
+          return render_template("warranty5.html")
     else:
       return render_template("signin.html")
 
@@ -24,7 +34,7 @@ def signin():
 def register():
      if request.method == "POST":
       useremail = request.form["email"]   #Data Extracted from HTML
-      password = request.form["password"]
+      password = request.form["pass"]
       cpassword = request.form["confirming"]
       list=[0,0,0,0,0,0]
       list[0]=request.form["radio1"]
@@ -35,6 +45,17 @@ def register():
       list[5]=request.form["radio6"]
       idea_output= predict_warranty(list)
       print(idea_output[0]) #ML Output
+      if(idea_output[0] == "Warranty1"):
+          return render_template("warranty1.html")
+      elif(idea_output[0] == "Warranty2"):
+          return render_template("warranty2.html")
+      elif(idea_output[0] == "Warranty3"):
+          return render_template("warranty3.html")
+      elif(idea_output[0] == "Warranty4"):
+          return render_template("warranty4.html")
+      elif(idea_output[0] == "Warranty5"):
+          return render_template("warranty5.html")
+
       if (password != cpassword) or (len(password)<7):
          return render_template("register1.html")
 
@@ -82,10 +103,7 @@ def p1():
 
  print(sudoku_list[tmax][1])   #Results of Sentiment Analysis
  print(sudoku_list[tmin][1])
- rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
-
-
-
+ rows = [{"positive":sudoku_list[tmax][1], "negative":sudoku_list[tmin][1]}]
  return render_template("product1.html", rows=rows)
 
 @app.route("/product2.html")
@@ -165,6 +183,10 @@ def p3():
     rows = [{"positive":sudoku_list[tmax][1],"negative":sudoku_list[tmin][1]}]
 
     return render_template("product3.html",rows=rows)
+
+@app.route("/Complete")
+def complete():
+    return render_template("complete.html")
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5001)

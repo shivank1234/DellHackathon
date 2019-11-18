@@ -149,7 +149,7 @@ a:hover, a:visited, a:link, a:active{
   height:250px;
 
 }
-/*
+
 
 table {
   border-collapse: collapse;
@@ -159,9 +159,8 @@ table {
 th, td {
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd; background-color: #4CAF50;
   color: white;
- } */
+ }
 
 .column {
   float: left;
